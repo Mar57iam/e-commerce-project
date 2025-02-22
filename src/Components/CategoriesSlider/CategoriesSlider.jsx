@@ -16,10 +16,30 @@ export default function CategoriesSlider() {
     speed: 500,
     slidesToShow: 7,
     slidesToScroll: 1,
-    autoplay: true, 
-    autoplaySpeed:1000
-
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024, // عند الشاشات المتوسطة
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768, // عند الشاشات الصغيرة
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480, // عند الشاشات الأصغر (موبايل)
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
+
 
 
 function getCategories(){
@@ -49,8 +69,8 @@ useEffect( () =>{
 
 return(
 
-  <div key={category._id}>
-    <img src={category.image} className='w-full h-[200px] object-cover ' alt="" />
+  <div className='' key={category._id}>
+    <img src={category.image} className='  w-full h-[200px] object-cover  ' alt="" />
     <h4>{category.name}</h4>
   </div> )
 })}

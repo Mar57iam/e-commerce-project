@@ -32,6 +32,10 @@ export default function Brands() {
         setSelectedBrand(null);
     };
 
+    if(isLoading){
+        return <div className="spinner "></div>
+      }
+
     return (
         <>
             <h2 className='text-emerald-600 text-3xl font-bold text-center'>All Brands</h2>

@@ -71,7 +71,7 @@ navigate('/')
     
 
  
-    <h2 className='text-emerald-600 font-bold'> Login Now</h2>
+    <h2 className='text-emerald-600 text-center text-2xl my-8 font-bold'> Login Now</h2>
      <form onSubmit={formik.handleSubmit} className="max-w-md mx-auto">
   
 
@@ -121,7 +121,7 @@ navigate('/')
 
   <button type="submit" className="text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">
     {isLoading ? <i className='fa fa-spinner fa-spin'></i> : 'Login'}</button>
-    <Link to="/register"><span className='text-blue-600 underline ms-4'>Don't Have an Account ? Register Now</span> </Link>
+    <Link to="/register"><span className='text-gray-500   font-semibold aria-hidden:  ms-4'>Don't Have an Account ? </span> <span className=' text-gray-500   hover:underline font-semibold'>Register Now</span> </Link>
   </form>
     </>
   )
