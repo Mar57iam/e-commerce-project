@@ -29,26 +29,24 @@ import WishlistContextProvider from './Context/WishlistContext'
 // import { WishlistContextProvider } from './Context/WishlistContext'
 let query = new QueryClient()
 
-let x = createHashRouter( [
-  { path: '/e-commerce-project/' , element : <Layout/>,children:[
-    {index:true , element: 
-      <ProtectedRoute> <Home/> </ProtectedRoute>
-      },
-    {path:'products' , element:  <ProtectedRoute>  <Products/>   </ProtectedRoute>  },
-    {path:'cart' , element: <ProtectedRoute>   <Cart/>   </ProtectedRoute> },
-    {path:'brand' , element: <ProtectedRoute>  <Brands/>   </ProtectedRoute>  },
-    {path:'brandmodale/:id' , element: <ProtectedRoute>  <BrandModale/>   </ProtectedRoute>  },
-    {path:'categories' , element: <ProtectedRoute>   <Categories/>   </ProtectedRoute> },
-    {path:'allorders' , element: <ProtectedRoute>   <Allorders/>   </ProtectedRoute> },
-    {path:'wishlist' , element: <ProtectedRoute>   <WishList/>   </ProtectedRoute> },
-    {path:`specificcategory/:id` , element: <ProtectedRoute>   <SpecificCategory/>   </ProtectedRoute> },
-    {path:'checkout' , element: <ProtectedRoute>   <Checkout/>   </ProtectedRoute> },
-    {path:'productdetails/:id/:category' , element: <ProtectedRoute>   < ProductDetails/>   </ProtectedRoute> },
-    {path:'register' , element:<Register/>},
-    {path:'login' , element:<Login/>},
-    {path:'*' , element:<Notfound/>},
+let x = createHashRouter([
+  { path: '/', element: <Layout />, children: [ 
+    { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
+    { path: 'products', element: <ProtectedRoute><Products /></ProtectedRoute> },
+    { path: 'cart', element: <ProtectedRoute><Cart /></ProtectedRoute> },
+    { path: 'brand', element: <ProtectedRoute><Brands /></ProtectedRoute> },
+    { path: 'brandmodale/:id', element: <ProtectedRoute><BrandModale /></ProtectedRoute> },
+    { path: 'categories', element: <ProtectedRoute><Categories /></ProtectedRoute> },
+    { path: 'allorders', element: <ProtectedRoute><Allorders /></ProtectedRoute> },
+    { path: 'wishlist', element: <ProtectedRoute><WishList /></ProtectedRoute> },
+    { path: 'specificcategory/:id', element: <ProtectedRoute><SpecificCategory /></ProtectedRoute> },
+    { path: 'checkout', element: <ProtectedRoute><Checkout /></ProtectedRoute> },
+    { path: 'productdetails/:id/:category', element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },
+    { path: 'register', element: <Register /> },
+    { path: 'login', element: <Login /> },
+    { path: '*', element: <Notfound /> },
   ]}
-])
+]);
 function App() {
   const [count, setCount] = useState(0)
 
