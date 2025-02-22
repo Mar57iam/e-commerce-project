@@ -30,7 +30,7 @@ import WishlistContextProvider from './Context/WishlistContext'
 let query = new QueryClient()
 
 let x = createHashRouter( [
-  { path: '' , element : <Layout/>,children:[
+  { path: '/e-commerce-project/' , element : <Layout/>,children:[
     {index:true , element: 
       <ProtectedRoute> <Home/> </ProtectedRoute>
       },
