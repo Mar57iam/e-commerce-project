@@ -26,11 +26,10 @@ import Allorders from './Components/Allorders/Allorders'
 import SpecificCategory from './Components/SpecificCategory/SpecificCategory'
 import WishList from './Components/WishList/WishList'
 import WishlistContextProvider from './Context/WishlistContext'
-// import { WishlistContextProvider } from './Context/WishlistContext'
 let query = new QueryClient()
 
 let x = createHashRouter([
-  { path: '/', element: <Layout />, children: [ 
+  { path: '', element: <Layout />, children: [ 
     { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
     { path: 'products', element: <ProtectedRoute><Products /></ProtectedRoute> },
     { path: 'cart', element: <ProtectedRoute><Cart /></ProtectedRoute> },

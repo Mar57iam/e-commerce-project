@@ -55,14 +55,14 @@ export default function ProductDetails() {
   return (
     <>
       <div className="row items-center justify-center">
-        <div className="w-1/4 p-4 -z-40">
+        <div className=" w-1/2  md:w-1/4 p-4 -z-40">
           <Slider dots={false} infinite speed={500} slidesToShow={1} slidesToScroll={1} autoplay autoplaySpeed={2000}>
             {Product?.images.map((src, index) => (
               <img key={index} src={src} className="w-full" alt="product" />
             ))}
           </Slider>
         </div>
-        <div className="w-3/4">
+        <div className="  w-1/2  md:w-3/4">
           <h3>{Product?.title}</h3>
           <h4 className="text-slate-600">{Product?.description}</h4>
           <h4>{Product?.category.name}</h4>
@@ -78,11 +78,11 @@ export default function ProductDetails() {
         </div>
       </div>
 
-      <div className="row">
+      <div className="row  ">
         {RelatedProducts.length > 0 ? (
           RelatedProducts.map((product) => (
-            <div key={product.id} className="w-1/6">
-              <div className="product my-2 p-1">
+            <div key={product.id} className=" w-1/2 md:w-1/4 lg:w-1/6    ">
+              <div className="product my-2 p-1 ">
                 <Link to={`/productdetails/${product.id}/${product.category.name}`}>
                   <img src={product.imageCover} className="w-full" alt={product.name} />
                   <h3 className="text-emerald-500">{product.category.name}</h3>

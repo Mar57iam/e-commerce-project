@@ -46,57 +46,55 @@ export default function Cart() {
         <div className="spinner"></div>
       ) : CartDetails?.products.length > 0 ? (
         <>
-          <h2 className="text-center text-2xl capitalize font-bold text-emerald-700 pb-8">
+          <h2 className="text-center text-xl md:text-2xl capitalize font-bold text-emerald-700 pb-4 md:pb-8">
             Total Price: {CartDetails?.totalCartPrice}
           </h2>
-
+  
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                  <th scope="col" className="px-16 py-3">
+                  <th scope="col" className="px-4 md:px-6 py-3">
                     <span className="sr-only">Image</span>
                   </th>
-                  <th scope="col" className="px-6 py-3">Product</th>
-                  <th scope="col" className="px-6 py-3">Qty</th>
-                  <th scope="col" className="px-6 py-3">Price</th>
-                  <th scope="col" className="px-6 py-3">Action</th>
+                  <th scope="col" className="px-2 md:px-6 py-3">Product</th>
+                  <th scope="col" className="px-2 md:px-6 py-3">Qty</th>
+                  <th scope="col" className="px-2 md:px-6 py-3">Price</th>
+                  <th scope="col" className="px-2 md:px-6 py-3">Action</th>
                 </tr>
               </thead>
               <tbody>
                 {CartDetails?.products.map((product) => (
                   <tr key={product._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50">
-                    <td className="p-4">
-                      <img src={product.product.imageCover} className="w-16 md:w-32 max-w-full max-h-full" alt="Product" />
+                    <td className="p-2 md:p-4">
+                      <img src={product.product.imageCover} className="w-12 md:w-16 lg:w-32 max-w-full max-h-full" alt="Product" />
                     </td>
-                    <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">{product.product.title}</td>
-                    <td className="px-6 py-4">
+                    <td className="px-2 md:px-6 py-4 font-semibold text-gray-900 dark:text-white">{product.product.title}</td>
+                    <td className="px-2 md:px-6 py-4">
                       <div className="flex items-center">
                         <button
                           onClick={() => updateProduct(product.product.id, product.count - 1)}
-                          className="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full hover:bg-gray-100"
+                          className="p-1 text-sm h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full hover:bg-gray-100"
                           type="button"
                         >
-                          <span className="sr-only">Decrease quantity</span>
                           <svg className="w-3 h-3" viewBox="0 0 18 2" fill="none">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 1h16" />
                           </svg>
                         </button>
-                        <span>{product.count}</span>
+                        <span className="mx-2 md:mx-3">{product.count}</span>
                         <button
                           onClick={() => updateProduct(product.product.id, product.count + 1)}
-                          className="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full hover:bg-gray-100"
+                          className="p-1 text-sm h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full hover:bg-gray-100"
                           type="button"
                         >
-                          <span className="sr-only">Increase quantity</span>
                           <svg className="w-3 h-3" viewBox="0 0 18 18" fill="none">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 1v16M1 9h16" />
                           </svg>
                         </button>
                       </div>
                     </td>
-                    <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">{product.price}</td>
-                    <td className="px-6 py-4">
+                    <td className="px-2 md:px-6 py-4 font-semibold text-gray-900 dark:text-white">{product.price}</td>
+                    <td className="px-2 md:px-6 py-4">
                       <span
                         onClick={() => deleteItem(product.product.id)}
                         className="cursor-pointer font-medium text-red-600 dark:text-red-500 hover:underline"
@@ -108,13 +106,19 @@ export default function Cart() {
                 ))}
               </tbody>
             </table>
-            <Link to="/checkout">
-              <button className="btn my-4">Checkout</button>
-            </Link>
+          </div>
+  
+          
+          <div className="flex justify-center my-4">
+          <Link to="/checkout" className="w-full">
+    <button className="w-full px-6 py-3 text-lg bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition">
+      Checkout
+    </button>
+  </Link>
           </div>
         </>
       ) : (
-        <h2 className="text-center text-2xl text-red-700 font-bold my-10">No Products Added</h2>
+        <h2 className="text-center text-xl md:text-2xl text-red-700 font-bold my-10">No Products Added</h2>
       )}
     </>
   );

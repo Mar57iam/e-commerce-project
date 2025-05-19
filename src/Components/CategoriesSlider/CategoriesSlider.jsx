@@ -20,19 +20,19 @@ export default function CategoriesSlider() {
     autoplaySpeed: 2000,
     responsive: [
       {
-        breakpoint: 1024, // عند الشاشات المتوسطة
+        breakpoint: 1024, 
         settings: {
           slidesToShow: 4,
         },
       },
       {
-        breakpoint: 768, // عند الشاشات الصغيرة
+        breakpoint: 768, 
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 480, // عند الشاشات الأصغر (موبايل)
+        breakpoint: 480, 
         settings: {
           slidesToShow: 1,
         },
